@@ -8,4 +8,7 @@ module.exports = (app) => {
 
   app.route('/mahasiswa')
     .get(myJson.mahasiswa)
+
+  app.route('/mahasiswa/:nim')
+    .get(myJson.selectedMahasiswa)
 }
