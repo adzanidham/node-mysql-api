@@ -1,8 +1,11 @@
 'use strict'
 
 module.exports = (app) => {
-  let myJson = require('./controller')
+  const myJson = require('./controller')
 
   app.route('/')
     .get(myJson.index)
+
+  app.route('/mahasiswa')
+    .get(myJson.mahasiswa)
 }
