@@ -22,3 +22,14 @@ exports.selectedMahasiswa = (req, res) => {
     response.ok(rows, res)
   })
 }
+
+exports.inputMahasiswa = (req, res) => {
+  let nim = req.body.nim
+  let nama = req.body.nama
+  let jurusan = req.body.jurusan
+
+  connection.query('INSERT INTO mahasiswa values (?, ?, ?)', [nim, nama, jurusan], (error, rows, fields) => {
+    if (error) console.log(error)
+    response.ok('Berhasi menambahkan data mahasiswa', res)
+  })
+}
